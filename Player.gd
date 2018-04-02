@@ -4,7 +4,6 @@ extends RigidBody2D
 # var a = 2
 # var b = "textvar"
 var speed = 10
-var gravity = 10
 
 
 func _ready():
