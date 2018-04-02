@@ -8,12 +8,11 @@
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 234.971, 765.277 )
-gravity_scale = 0.0
 
 [node name="icon" type="Sprite" parent="." index="1"]
 
-position = Vector2( 88.6857, 446.12 )
-scale = Vector2( 1.24245, 13.6266 )
+position = Vector2( 62.2601, 445.419 )
+scale = Vector2( 2.06825, 13.4012 )
 texture = ExtResource( 2 )
 
 
