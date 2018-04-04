@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 var base_speed = Vector2(0, -3)
 var speed = Vector2(0, -3)
+var start_pos
 
 
 # -1 = left | 1 = right
@@ -14,7 +15,7 @@ var time_alive = 0
 
 
 func _ready():
-	
+	start_pos = position.y
 	pass
 
 func _process(delta):
