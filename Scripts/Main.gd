@@ -12,7 +12,7 @@ var time_between_spawn = 2
 
 var time_randomness = 2
 
-var background = preload("res://Scenes/background.tscn")
+var background = preload("res://Scenes/Background.tscn")
 var old_b
 var new_b
 var last_pos = 0
@@ -46,6 +46,6 @@ func spawn_enemy():
 	add_child(new_enemy)
 	new_enemy.position = $Player.position + spawn_yoffset + Vector2(rand_range(-spawn_xpos_random, spawn_xpos_random), 0)
 	# reset timer
-	# time_between_spawn = base_time_between_spawn *  exp(-$Player.time_alive/25) + rand_range(0, time_randomness)
-	time_between_spawn = base_time_between_spawn + rand_range(-time_randomness, time_randomness)
+	time_between_spawn = base_time_between_spawn *  exp(-$Player.time_alive/25) + rand_range(0, time_randomness)
+	print("spawn time " + str(time_between_spawn))
 	spawn_timer = 0

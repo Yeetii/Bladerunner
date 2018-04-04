@@ -8,7 +8,7 @@ var speed = Vector2(0, -3)
 # -1 = left | 1 = right
 var attack_left = true
 var can_attack = true
-var attack_speed = .3
+var attack_speed = .1
 
 var time_alive = 0
 
@@ -33,7 +33,7 @@ func _on_Tween_tween_completed(object, key):
 func attack():
 	$Tween.interpolate_property($Sword, "rotation_degrees",
 		  $Sword.rotation_degrees, -180 * int(attack_left),
-		  attack_speed,Tween.TRANS_EXPO, Tween.EASE_IN_OUT)
+		  attack_speed,Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	
 	$Tween.start()
 	attack_left = !attack_left
