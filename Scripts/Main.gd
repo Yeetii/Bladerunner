@@ -18,10 +18,9 @@ var new_b
 var last_pos = 0
 
 func _ready():
+	#Init background
 	old_b = background.instance()
 	add_child(old_b)
-	
-	
 	new_b = background.instance()
 	add_child(new_b)
 	new_b.position.y = old_b.position.y - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y
@@ -33,15 +32,13 @@ func _process(delta):
 	if spawn_timer >= time_between_spawn:
 		spawn_enemy()
 		
-	#print(-int($Player.position.y) % 1000)
-	if ($Player.position.y < (last_pos - 854)):
-		last_pos = last_pos - 854
-
+	#Move background forwards
+	if ($Player.position.y + 200 < (last_pos - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y)):
+		last_pos = last_pos - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y
 		var temp = old_b
 		old_b = new_b
 		new_b = temp
 		new_b.position.y = old_b.position.y - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y
-		print(old_b.get_texture().get_size().y)
 
 func spawn_enemy():
 	print(randf(-spawn_xpos_random, spawn_xpos_random))
