@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Goblin Adult.png-ad964e198a026558ccccc5770e62b0a5.stex"
+
+[deps]
+
+source_file="res://Sprites/Characters/Goblin Adult.png"
+source_md5="3fd183908cd1870475f0e5fd54704dfe"
+
+dest_files=[ "res://.import/Goblin Adult.png-ad964e198a026558ccccc5770e62b0a5.stex" ]
+dest_md5="ffb708de5ca70b2bb9b6360e18b702e2"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
