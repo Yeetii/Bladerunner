@@ -27,6 +27,9 @@ func _ready():
 	pass
 
 func _process(delta):
+	#Update score
+	$UI/Score.set_text(String(get_score()) + " m")
+	
 	spawn_timer += delta
 	
 	if spawn_timer >= time_between_spawn:
@@ -49,3 +52,9 @@ func spawn_enemy():
 	# time_between_spawn = base_time_between_spawn *  exp(-$Player.time_alive/25) + rand_range(0, time_randomness)
 	time_between_spawn = base_time_between_spawn + rand_range(-time_randomness, time_randomness)
 	spawn_timer = 0
+	
+func get_score():
+	return int((-$Player.position.y + $Player.start_pos) / 200)
+	
+	
+	
