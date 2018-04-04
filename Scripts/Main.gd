@@ -12,19 +12,36 @@ var time_between_spawn = 2
 
 var time_randomness = 2
 
-
+var background = preload("res://Scenes/background.tscn")
+var old_b
+var new_b
+var last_pos = 0
 
 func _ready():
+	old_b = background.instance()
+	add_child(old_b)
+	
+	
+	new_b = background.instance()
+	add_child(new_b)
+	new_b.position.y = old_b.position.y - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y
 	pass
 
 func _process(delta):
-	if (int($Player.position.y) % 1000 <= 1):
-		print("passed")
 	spawn_timer += delta
 	
 	if spawn_timer >= time_between_spawn:
 		spawn_enemy()
+		
+	#print(-int($Player.position.y) % 1000)
+	if ($Player.position.y < (last_pos - 854)):
+		last_pos = last_pos - 854
 
+		var temp = old_b
+		old_b = new_b
+		new_b = temp
+		new_b.position.y = old_b.position.y - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y
+		print(old_b.get_texture().get_size().y)
 
 func spawn_enemy():
 	print(randf(-spawn_xpos_random, spawn_xpos_random))
@@ -35,4 +52,3 @@ func spawn_enemy():
 	# time_between_spawn = base_time_between_spawn *  exp(-$Player.time_alive/25) + rand_range(0, time_randomness)
 	time_between_spawn = base_time_between_spawn + rand_range(-time_randomness, time_randomness)
 	spawn_timer = 0
-	
