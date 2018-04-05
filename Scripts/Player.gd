@@ -9,7 +9,6 @@ var start_pos
 var kills = 0
 
 
-# -1 = left | 1 = right
 var attack_left = true
 var can_attack = true
 var attack_speed = .1
@@ -20,17 +19,15 @@ export var max_speed = 10
 
 
 func _ready():
-	start_pos = position.y
+	
 	pass
 
 func _process(delta):
 	move_and_collide(speed)
 	
-	time_alive += delta
-	update_speed()
-	
-	
-	
+	if Global.is_playing:
+		time_alive += delta
+		update_speed()
 
 
 func _on_Tween_tween_completed(object, key):
@@ -63,3 +60,8 @@ func update_speed():
 	pass
 	#time_between_spawn = base_time_between_spawn *  exp(-$Player.time_alive/25) + rand_range(0, time_randomness)
 
+
+
+func _on_Play_pressed():
+	start_pos = position.y
+	pass # replace with function body

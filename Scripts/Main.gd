@@ -6,7 +6,7 @@ var spawn_xpos_random = 100
 var spawn_yoffset = Vector2(0, -1000)
 
 var time_alive = 0
-var spawn_timer = 0
+var spawn_timer = 2
 var base_time_between_spawn = 2
 var time_between_spawn = 2
 
@@ -29,12 +29,13 @@ func _ready():
 
 func _process(delta):
 	#Update score
-	$UI/Score.set_text(String(get_score()) + " m")
+	if Global.is_playing:
+		$UI/Score.set_text(str(get_score()) + " m")
 	
-	spawn_timer += delta
-	
-	if spawn_timer >= time_between_spawn:
-		spawn_enemy()
+		# spawn enemy timer
+		spawn_timer += delta
+		if spawn_timer >= time_between_spawn:
+			spawn_enemy()
 		
 	#Move background forwards
 	if ($Player.position.y + 200 < (last_pos - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y)):
@@ -58,3 +59,8 @@ func get_score():
 	
 	
 	
+
+func _on_Play_pressed():
+	Global.is_playing = true
+	$UI/Play.hide()
+	pass # replace with function body
