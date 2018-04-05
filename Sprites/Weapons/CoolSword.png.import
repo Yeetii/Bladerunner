@@ -10,7 +10,7 @@ source_file="res://Sprites/Weapons/CoolSword.png"
 source_md5="e695ff6ab573a37efceaee0d94ff77c7"
 
 dest_files=[ "res://.import/CoolSword.png-48dd66aa503d646667ec8e339e8cfe02.stex" ]
-dest_md5="2f5fb6978c17e76b65bca2c7aa84d32b"
+dest_md5="550f037ce7b70e8448cc347c922b2ca6"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

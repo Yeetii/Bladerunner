@@ -10,7 +10,7 @@ source_file="res://Sprites/Characters/Goblin Adult.png"
 source_md5="3fd183908cd1870475f0e5fd54704dfe"
 
 dest_files=[ "res://.import/Goblin Adult.png-ad964e198a026558ccccc5770e62b0a5.stex" ]
-dest_md5="ffb708de5ca70b2bb9b6360e18b702e2"
+dest_md5="dd4a81322d2f43d89481c7ccab122702"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

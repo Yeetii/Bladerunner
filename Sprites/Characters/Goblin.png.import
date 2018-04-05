@@ -10,7 +10,7 @@ source_file="res://Sprites/Characters/Goblin.png"
 source_md5="5f94443b6d34a74c713bf379dcbbf276"
 
 dest_files=[ "res://.import/Goblin.png-cff3eba575a47a4b238aa64c6eabf1d0.stex" ]
-dest_md5="50a13d76d898cad741a850eb145bdd26"
+dest_md5="346eaaf7c2c971d9e9cc9e0649d7b7a3"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

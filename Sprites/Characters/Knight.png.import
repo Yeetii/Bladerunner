@@ -10,7 +10,7 @@ source_file="res://Sprites/Characters/Knight.png"
 source_md5="254b7515c44d457ad80c983b200cf53f"
 
 dest_files=[ "res://.import/Knight.png-9635af8084cacfc2c30585c03cf9383a.stex" ]
-dest_md5="fcd31dfe4e68842f2ff3d9676d8c60df"
+dest_md5="d601a42aed986a2e5d1f5c3d54dc658e"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

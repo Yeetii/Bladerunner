@@ -10,7 +10,7 @@ source_file="res://Sprites/Characters/Anders.png"
 source_md5="69d772bd5010bb8cbf0944563cc878bb"
 
 dest_files=[ "res://.import/Anders.png-80f6c26876458f8d0a132521c00c2840.stex" ]
-dest_md5="b5706c21a88fbcd2ca4153201bae726e"
+dest_md5="b1c040652ad889d7ca007e86ee68f267"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

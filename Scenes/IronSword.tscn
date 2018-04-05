@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Sprites/Weapons/CoolSword.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Sword.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Weapons/CoolSword.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -16,6 +17,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
@@ -23,7 +25,7 @@ _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility" ]
 position = Vector2( 33.3387, 1.39673 )
 scale = Vector2( 2, 2 )
 z_index = -1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -10, -8 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
@@ -32,5 +34,7 @@ _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform",
 
 position = Vector2( 93.7327, 1.48094 )
 shape = SubResource( 1 )
+
+[connection signal="area_entered" from="." to="." method="_on_Sword_area_entered"]
 
 

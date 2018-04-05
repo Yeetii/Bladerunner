@@ -10,12 +10,13 @@ var spawn_timer = 0
 var base_time_between_spawn = 2
 var time_between_spawn = 2
 
-var time_randomness = 2
+var time_randomness = 0.1
 
 var background = preload("res://Scenes/Background.tscn")
 var old_b
 var new_b
 var last_pos = 0
+
 
 func _ready():
 	#Init background
@@ -24,7 +25,7 @@ func _ready():
 	new_b = background.instance()
 	add_child(new_b)
 	new_b.position.y = old_b.position.y - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y
-	pass
+	
 
 func _process(delta):
 	#Update score
@@ -49,8 +50,7 @@ func spawn_enemy():
 	add_child(new_enemy)
 	new_enemy.position = $Player.position + spawn_yoffset + Vector2(rand_range(-spawn_xpos_random, spawn_xpos_random), 0)
 	# reset timer
-	# time_between_spawn = base_time_between_spawn *  exp(-$Player.time_alive/25) + rand_range(0, time_randomness)
-	time_between_spawn = base_time_between_spawn + rand_range(-time_randomness, time_randomness)
+	time_between_spawn = base_time_between_spawn *  exp(-$Player.time_alive/50) + rand_range(0, time_randomness)
 	spawn_timer = 0
 	
 func get_score():
