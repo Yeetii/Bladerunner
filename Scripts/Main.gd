@@ -1,6 +1,10 @@
 extends Node
 
+var paused = false
+
 var enemy = preload("res://Scenes/Enemy.tscn")
+
+
 
 var spawn_xpos_random = 100
 var spawn_yoffset = Vector2(0, -1000)
@@ -64,3 +68,12 @@ func _on_Play_pressed():
 	Global.is_playing = true
 	$UI/Play.hide()
 	pass # replace with function body
+
+
+func _on_Pause_pressed():
+	paused = !paused
+	if paused:
+		$UI/Pause/AnimationPlayer.play("Pause_Animation")
+	else:
+		$UI/Pause/AnimationPlayer.play_backwards("Pause_Animation")
+	get_tree().paused = paused
