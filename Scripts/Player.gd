@@ -46,7 +46,7 @@ func attack():
 
 
 func _input(event):
-	if event.is_pressed() and event.is_action_type():
+	if event.is_pressed():
 		print("test")
 		if can_attack:
 			attack()
