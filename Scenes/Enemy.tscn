@@ -29,4 +29,6 @@ _sections_unfolded = [ "Transform" ]
 
 shape = SubResource( 1 )
 
+[connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
+
 

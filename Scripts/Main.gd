@@ -2,8 +2,9 @@ extends Node
 
 var paused = false
 
-var enemy = preload("res://Scenes/Enemy.tscn")
+var transition = preload("res://Scenes/Transition.tscn")
 
+var enemy = preload("res://Scenes/Enemy.tscn")
 
 
 var spawn_xpos_random = 100
@@ -30,6 +31,8 @@ func _ready():
 	add_child(new_b)
 	new_b.position.y = old_b.position.y - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y
 	
+	# Gör att randomen är random och inte samma varje gång
+	randomize()
 
 func _process(delta):
 	#Update score
@@ -40,14 +43,15 @@ func _process(delta):
 		spawn_timer += delta
 		if spawn_timer >= time_between_spawn:
 			spawn_enemy()
-		
+	
 	#Move background forwards
-	if ($Player.position.y + 200 < (last_pos - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y)):
-		last_pos = last_pos - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y
-		var temp = old_b
-		old_b = new_b
-		new_b = temp
-		new_b.position.y = old_b.position.y - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y
+	if has_node("Player"):
+		if ($Player.position.y + 150 < (last_pos - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y)):
+			last_pos = last_pos - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y
+			var temp = old_b
+			old_b = new_b
+			new_b = temp
+			new_b.position.y = old_b.position.y - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y
 
 func spawn_enemy():
 	print(randf(-spawn_xpos_random, spawn_xpos_random))
@@ -60,20 +64,27 @@ func spawn_enemy():
 	
 func get_score():
 	return int((-$Player.position.y + $Player.start_pos) / 200)
-	
-	
-	
+
 
 func _on_Play_pressed():
 	Global.is_playing = true
-	$UI/Play.hide()
-	pass # replace with function body
+	$UI/NotPlaying.hide()
 
 
 func _on_Pause_pressed():
-	paused = !paused
-	if paused:
+	Global.paused = !Global.paused
+	if Global.paused:
 		$UI/Pause/AnimationPlayer.play("Pause_Animation")
 	else:
 		$UI/Pause/AnimationPlayer.play_backwards("Pause_Animation")
-	get_tree().paused = paused
+	get_tree().paused = Global.paused
+
+func restart():
+	Global.update_high_score(get_score())
+	Global.save_game()
+	var new_transition = transition.instance()
+	$UI.add_child(new_transition)
+	new_transition.play("in")
+	
+
+ 

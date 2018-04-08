@@ -44,8 +44,9 @@ func attack():
 	attack_left = !attack_left
 
 
+
 func _input(event):
-	if Input.is_action_just_pressed("tap"):
+	if event.is_pressed() and event.is_action_type():
 		print("test")
 		if can_attack:
 			attack()
@@ -55,13 +56,22 @@ func _input(event):
 func update_speed():
 	speed = base_speed * exp(time_alive/100)
 	speed.y = clamp(speed.y, -max_speed, 0)
-	
-	
-	pass
-	#time_between_spawn = base_time_between_spawn *  exp(-$Player.time_alive/25) + rand_range(0, time_randomness)
-
 
 
 func _on_Play_pressed():
 	start_pos = position.y
-	pass # replace with function body
+
+
+func die():
+	print("Player dead")
+	
+	var camera = $Camera2D
+	var camera_offset = camera.position
+	remove_child(camera)
+	get_parent().add_child(camera)
+	camera.position = position + camera_offset
+	
+	
+	Global.is_playing = false
+	get_parent().restart()
+	queue_free()

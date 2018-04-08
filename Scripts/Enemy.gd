@@ -14,6 +14,8 @@ func _process(delta):
 func _on_Enemy_area_entered(area):
 	print("asd")
 	if area.get_parent().get_name() == "Sword":
-		get_parent().get_parent().kills += 1
 		queue_free()
 
+func _on_Enemy_body_entered(body):
+	print("test")
+	body.die()
