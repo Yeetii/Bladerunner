@@ -11,7 +11,7 @@ var kills = 0
 
 var attack_left = true
 var can_attack = true
-var attack_speed = .1
+var attack_speed = .2
 
 var time_alive = 0
 
