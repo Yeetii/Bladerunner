@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 radius = 34.2424
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( 10, 0 )
 input_pickable = false
@@ -65,6 +65,7 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+_sections_unfolded = [ "playback" ]
 
 [node name="Sword" type="Node2D" parent="." index="4"]
 

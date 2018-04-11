@@ -31,13 +31,12 @@ func _process(delta):
 
 
 func _on_Tween_tween_completed(object, key):
-	print("Done")
 	can_attack = true
 
 
 func attack():
-	$Tween.interpolate_property($Sword, "rotation_degrees",
-		  $Sword.rotation_degrees, -180 * int(attack_left),
+	$Tween.interpolate_property($Sword, "rotation",
+		  $Sword.rotation, -PI * int(attack_left),
 		  attack_speed,Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	
 	$Tween.start()
@@ -47,7 +46,6 @@ func attack():
 
 func _input(event):
 	if event.is_pressed():
-		print("test")
 		if can_attack:
 			attack()
 			can_attack = false
