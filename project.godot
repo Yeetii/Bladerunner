@@ -10,10 +10,10 @@ config_version=3
 
 [application]
 
-config/name="Bladerunner"
+config/name="Swordrunner"
 run/main_scene="res://Scenes/Main.tscn"
 boot_splash/image="res://Sprites/bg.png"
-config/icon="res://icon.png"
+config/icon="res://Sprites/Characters/Hero.png"
 
 [autoload]
 

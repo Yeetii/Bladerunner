@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+var energy = 3
+var max_energy = 3
+signal energy_changed(new_energy)
 
 var base_speed = Vector2(0, -3)
 var speed = Vector2(0, -3)
@@ -28,6 +31,7 @@ func _process(delta):
 	if Global.is_playing:
 		time_alive += delta
 		update_speed()
+	
 
 
 func _on_Tween_tween_completed(object, key):
@@ -41,12 +45,12 @@ func attack():
 	
 	$Tween.start()
 	attack_left = !attack_left
-
+	add_energy(-1)
 
 
 func _input(event):
 	if event.is_pressed():
-		if can_attack:
+		if can_attack && has_energy():
 			attack()
 			can_attack = false
 
@@ -73,3 +77,16 @@ func die():
 	Global.is_playing = false
 	get_parent().restart()
 	queue_free()
+
+func _on_energy_timer_timeout():
+	add_energy(1)
+
+func has_energy():
+	return energy > 0
+
+func add_energy(value):
+	energy += value
+	energy = clamp(energy, 0, max_energy)
+	if energy < max_energy:
+		$energy_timer.start()
+	emit_signal("energy_changed", energy)
