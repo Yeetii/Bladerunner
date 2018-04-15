@@ -1,14 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Fonts/font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Sprites/Pause.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/HighScore.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Transition.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sprites/EnergyBack.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/EnergyFiller.png" type="Texture" id=8]
-[ext_resource path="res://Scripts/EnergyBar.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Goblin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GobinAdult.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Sprites/Pause.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/HighScore.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Transition.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/EnergyBack.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/EnergyFiller.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/EnergyBar.gd" type="Script" id=11]
 
 [sub_resource type="Animation" id=1]
 
@@ -32,8 +34,12 @@ tracks/0/keys = {
 [node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
+gobin_spawn_chance = 2
+goblin = ExtResource( 2 )
+goblin_adult_spawn_chance = 1
+goblin_adult = ExtResource( 3 )
 
-[node name="Player" parent="." index="0" instance=ExtResource( 2 )]
+[node name="Player" parent="." index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 240.769, -106.977 )
 max_speed = 20
@@ -60,7 +66,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 text = "0 m"
 align = 1
 valign = 1
@@ -98,7 +104,7 @@ _sections_unfolded = [ "Pause", "Rect" ]
 
 [node name="Sprite" type="Sprite" parent="UI/Pause" index="0"]
 
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 centered = false
 hframes = 5
 region_rect = Rect2( 0, 0.5, 45, 45 )
@@ -120,9 +126,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.0
 margin_top = -1.0
-margin_right = 1.0
 margin_bottom = -1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -148,7 +152,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 toggle_mode = false
 action_mode = 0
 enabled_focus_mode = 0
@@ -175,17 +179,17 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 text = "High Score"
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="Transition" parent="UI" index="3" instance=ExtResource( 6 )]
+[node name="Transition" parent="UI" index="3" instance=ExtResource( 8 )]
 
 visible = false
 
@@ -212,14 +216,14 @@ page = 0.0
 value = 0.0
 exp_edit = false
 rounded = false
-texture_under = ExtResource( 7 )
+texture_under = ExtResource( 9 )
 texture_over = null
-texture_progress = ExtResource( 8 )
+texture_progress = ExtResource( 10 )
 fill_mode = 4
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( -1, 0 )
 nine_patch_stretch = false
-script = ExtResource( 9 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Radial Fill", "Rect", "Textures" ]
 player = NodePath("../../Player")
 

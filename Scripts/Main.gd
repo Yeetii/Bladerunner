@@ -4,11 +4,20 @@ var paused = false
 
 var transition = preload("res://Scenes/Transition.tscn")
 
-var enemy = preload("res://Scenes/Enemy.tscn")
 
 
-var spawn_xpos_random = 100
-var spawn_yoffset = Vector2(0, -1000)
+
+var enemies = {}
+
+# Enemies
+export (int) var gobin_spawn_chance
+export (PackedScene) var goblin
+
+export (int) var goblin_adult_spawn_chance
+export (PackedScene) var goblin_adult
+
+
+
 
 var time_alive = 0
 var spawn_timer = 2
@@ -24,6 +33,9 @@ var last_pos = 0
 
 
 func _ready():
+	init_enemies()
+	
+	
 	#Init background
 	old_b = background.instance()
 	add_child(old_b)
@@ -35,8 +47,8 @@ func _ready():
 	randomize()
 
 func _process(delta):
-	#Update score
 	if Global.is_playing:
+		#Update score
 		$UI/Score.set_text(str(get_score()) + " m")
 	
 		# spawn enemy timer
@@ -54,16 +66,42 @@ func _process(delta):
 			new_b.position.y = old_b.position.y - old_b.get_texture().get_size().y * old_b.get_transform().get_scale().y
 
 func spawn_enemy():
-	print(randf(-spawn_xpos_random, spawn_xpos_random))
+	var enemy = get_random_enemy()
+	print(enemy)
+	
 	var new_enemy = enemy.instance()
 	add_child(new_enemy)
-	new_enemy.position = $Player.position + spawn_yoffset + Vector2(rand_range(-spawn_xpos_random, spawn_xpos_random), 0)
+	new_enemy.spawn($Player.position)
 	# reset timer
 	time_between_spawn = base_time_between_spawn *  exp(-$Player.time_alive/50) + rand_range(0, time_randomness)
 	spawn_timer = 0
 	
 func get_score():
 	return int((-$Player.position.y + $Player.start_pos) / 200)
+
+func get_random_enemy():
+	var enemies_pool = []
+	for i in enemies:
+		for e in enemies[i].spawn_chance:
+			enemies_pool.append(enemies[i])
+	
+	return enemies_pool[int(rand_range(0, enemies_pool.size()))].scene
+
+
+func init_enemies():
+	enemies = {
+		goblin = {
+			'spawn_chance': gobin_spawn_chance,
+			'scene': goblin,
+		},
+		goblin_adult = {
+			'spawn_chance': goblin_adult_spawn_chance,
+			'scene': goblin_adult,
+		}
+	}
+
+
+
 
 
 func _on_Play_pressed():

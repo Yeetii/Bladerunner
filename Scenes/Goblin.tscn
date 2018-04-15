@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Goblin.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/Goblin.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 32.2772
 
-[node name="Enemy" type="Area2D"]
+[node name="Goblin" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -19,6 +19,10 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
+base_speed = 150
+speed_randomness = 140
+spawn_offset = Vector2( 0, -1000 )
+spawn_xpos_random = 100
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -38,9 +42,5 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
-
-[connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
-
-[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 
 
