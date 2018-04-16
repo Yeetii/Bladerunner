@@ -1,16 +1,18 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Goblin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/GobinAdult.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Fonts/font.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Sprites/Pause.png" type="Texture" id=6]
-[ext_resource path="res://Scripts/HighScore.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/Transition.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Sprites/EnergyBack.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/EnergyFiller.png" type="Texture" id=10]
-[ext_resource path="res://Scripts/EnergyBar.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/GoldText.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/gold.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Pause.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/HighScore.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Transition.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sprites/EnergyBack.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/EnergyFiller.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/EnergyBar.gd" type="Script" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -58,8 +60,10 @@ anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 0.0
-margin_left = -128.0
-margin_bottom = 64.0
+margin_left = -149.0
+margin_top = -1.0
+margin_right = -21.0
+margin_bottom = 63.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -68,14 +72,75 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 5 )
 text = "0 m"
-align = 1
+align = 2
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Material", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Pause" type="Button" parent="UI" index="1"]
+[node name="GoldInformation" type="HBoxContainer" parent="UI" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 306.0
+margin_top = 53.0
+margin_right = 457.0
+margin_bottom = 106.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Anchor", "Grow Direction", "Rect" ]
+
+[node name="Gold" type="Label" parent="UI/GoldInformation" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 102.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "custom_fonts" ]
+
+[node name="Sprite" type="TextureRect" parent="UI/GoldInformation" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 106.0
+margin_right = 151.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Offset", "Rect", "Size Flags" ]
+
+[node name="Pause" type="Button" parent="UI" index="2"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -104,7 +169,7 @@ _sections_unfolded = [ "Pause", "Rect" ]
 
 [node name="Sprite" type="Sprite" parent="UI/Pause" index="0"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 centered = false
 hframes = 5
 region_rect = Rect2( 0, 0.5, 45, 45 )
@@ -120,7 +185,7 @@ playback_speed = 1.0
 anims/Pause_Animation = SubResource( 1 )
 blend_times = [  ]
 
-[node name="NotPlaying" type="Control" parent="UI" index="2"]
+[node name="NotPlaying" type="Control" parent="UI" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -186,14 +251,14 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="Transition" parent="UI" index="3" instance=ExtResource( 8 )]
+[node name="Transition" parent="UI" index="4" instance=ExtResource( 10 )]
 
 visible = false
 
-[node name="EnergyBar" type="TextureProgress" parent="UI" index="4"]
+[node name="EnergyBar" type="TextureProgress" parent="UI" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -216,14 +281,14 @@ page = 0.0
 value = 0.0
 exp_edit = false
 rounded = false
-texture_under = ExtResource( 9 )
+texture_under = ExtResource( 11 )
 texture_over = null
-texture_progress = ExtResource( 10 )
+texture_progress = ExtResource( 12 )
 fill_mode = 4
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( -1, 0 )
 nine_patch_stretch = false
-script = ExtResource( 11 )
+script = ExtResource( 13 )
 _sections_unfolded = [ "Radial Fill", "Rect", "Textures" ]
 player = NodePath("../../Player")
 

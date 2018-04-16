@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Particle.gd" type="Script" id=1]
+[ext_resource path="res://Particles/EnemyHitParticle.tres" type="Material" id=2]
+
+[node name="EnemyHitParticle" type="Node2D"]
+
+z_index = 10
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Z Index" ]
+
+[node name="Particles2D" type="Particles2D" parent="." index="0"]
+
+modulate = Color( 0, 0.246094, 0.0672913, 0.364667 )
+self_modulate = Color( 0, 0.230469, 0.0144043, 0.690588 )
+show_behind_parent = true
+emitting = false
+amount = 100
+lifetime = 1.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( 0, 0, 0, 0 )
+local_coords = false
+draw_order = 0
+process_material = ExtResource( 2 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
+
+

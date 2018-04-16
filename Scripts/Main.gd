@@ -33,6 +33,8 @@ var last_pos = 0
 
 
 func _ready():
+	Global.update_text()
+	
 	init_enemies()
 	
 	

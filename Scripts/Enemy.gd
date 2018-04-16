@@ -1,5 +1,6 @@
 extends Area2D
 
+export (PackedScene) var death_particle
 
 export (int) var base_speed = 150
 export (int) var speed_randomness = 140
@@ -8,6 +9,8 @@ var speed
 export (Vector2) var spawn_offset = Vector2(0, -1000)
 export (int) var spawn_xpos_random = 100
 
+
+var gold = preload("res://Scenes/Gold.tscn")
 
 func _ready():
 	speed = base_speed + rand_range(-speed_randomness, speed_randomness)
@@ -34,6 +37,19 @@ func on_body_entered(body):
 	body.die()
 
 func death_animation(sword_rotation, attack_left):
+	
+	# spawn gold
+	var new_gold = gold.instance()
+	get_parent().get_node("UI").add_child(new_gold)
+	new_gold.global_position = get_global_transform_with_canvas().get_origin()
+	
+	new_gold.start()
+	
+
+	var new_particle = death_particle.instance()
+	get_parent().add_child(new_particle)
+	new_particle.global_position = global_position
+	#new_particle.get_node("Particles2D").emitting = true
 	
 	$CollisionShape2D.disabled = true
 	

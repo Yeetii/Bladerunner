@@ -12,7 +12,8 @@ config_version=3
 
 config/name="Swordrunner"
 run/main_scene="res://Scenes/Main.tscn"
-boot_splash/image="res://Sprites/bg.png"
+boot_splash/image="res://Sprites/black.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://Sprites/Characters/Hero.png"
 
 [autoload]

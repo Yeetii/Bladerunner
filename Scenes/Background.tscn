@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/bg2.png" type="Texture" id=1]
 
 [node name="icon" type="Sprite" index="0"]
 
