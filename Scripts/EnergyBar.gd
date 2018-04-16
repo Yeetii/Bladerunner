@@ -20,6 +20,9 @@ func _ready():
 func _process(delta):
 	energy = lerp(energy, new_energy, 10 * delta)
 	value = energy / max_energy
+	
+	
+	
 
 func update_energy_bar(updated_energy):
 	new_energy = updated_energy

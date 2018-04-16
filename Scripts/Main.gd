@@ -4,8 +4,7 @@ var paused = false
 
 var transition = preload("res://Scenes/Transition.tscn")
 
-
-
+var shop = preload("res://Scenes/Shop.tscn")
 
 var enemies = {}
 
@@ -125,6 +124,8 @@ func restart():
 	var new_transition = transition.instance()
 	$UI.add_child(new_transition)
 	new_transition.play("in")
-	
 
- 
+
+func _on_Shop_pressed():
+	get_tree().change_scene_to(shop)
+	pass # replace with function body

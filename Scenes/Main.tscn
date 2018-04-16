@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Goblin.tscn" type="PackedScene" id=2]
@@ -10,9 +10,7 @@
 [ext_resource path="res://Sprites/Pause.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/HighScore.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/Transition.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Sprites/EnergyBack.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/EnergyFiller.png" type="Texture" id=12]
-[ext_resource path="res://Scripts/EnergyBar.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/EnergyBar.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=1]
 
@@ -207,10 +205,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 0.0
-margin_left = 14.0
-margin_top = 457.0
-margin_right = -10.0
-margin_bottom = 602.0
+margin_left = 13.0
+margin_top = 529.0
+margin_right = -11.0
+margin_bottom = 674.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -234,10 +232,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 2.0
-margin_top = 159.0
-margin_right = 477.0
-margin_bottom = 359.0
+margin_left = -1.0
+margin_top = 110.0
+margin_right = 474.0
+margin_bottom = 310.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -254,48 +252,44 @@ max_lines_visible = -1
 script = ExtResource( 9 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="Transition" parent="UI" index="4" instance=ExtResource( 10 )]
-
-visible = false
-
-[node name="EnergyBar" type="TextureProgress" parent="UI" index="5"]
+[node name="Shop" type="Button" parent="UI/NotPlaying" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 5.0
-margin_top = 757.0
-margin_right = 101.0
-margin_bottom = 846.0
+margin_top = 308.0
+margin_right = 479.0
+margin_bottom = 486.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+focus_mode = 2
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-min_value = 0.0
-max_value = 1.0
-step = 0.01
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-texture_under = ExtResource( 11 )
-texture_over = null
-texture_progress = ExtResource( 12 )
-fill_mode = 4
-radial_fill_degrees = 360.0
-radial_center_offset = Vector2( -1, 0 )
-nine_patch_stretch = false
-script = ExtResource( 13 )
-_sections_unfolded = [ "Radial Fill", "Rect", "Textures" ]
-player = NodePath("../../Player")
+custom_fonts/font = ExtResource( 5 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Shop"
+flat = true
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Transition" parent="UI" index="4" instance=ExtResource( 10 )]
+
+visible = false
+
+[node name="EnergyBar" parent="UI" index="5" instance=ExtResource( 11 )]
 
 [connection signal="pressed" from="UI/Pause" to="." method="_on_Pause_pressed"]
 
 [connection signal="pressed" from="UI/NotPlaying/Play" to="." method="_on_Play_pressed"]
 
 [connection signal="pressed" from="UI/NotPlaying/Play" to="Player" method="_on_Play_pressed"]
+
+[connection signal="pressed" from="UI/NotPlaying/Shop" to="." method="_on_Shop_pressed"]
 
 

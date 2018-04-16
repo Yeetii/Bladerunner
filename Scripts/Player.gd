@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-var energy = 3
-var max_energy = 3
+var energy = 100
+var max_energy = 100
 signal energy_changed(new_energy)
 
 var base_speed = Vector2(0, -3)
@@ -32,6 +32,7 @@ func _process(delta):
 		time_alive += delta
 		update_speed()
 	
+	add_energy(10*delta)
 
 
 func _on_Tween_tween_completed(object, key):
@@ -45,7 +46,7 @@ func attack():
 	
 	$Tween.start()
 	attack_left = !attack_left
-	add_energy(-1)
+	add_energy(-$Sword/IronSword.energy_cost)
 
 
 func _input(event):
@@ -82,11 +83,11 @@ func _on_energy_timer_timeout():
 	add_energy(1)
 
 func has_energy():
-	return energy > 0
+	return energy - $Sword/IronSword.energy_cost > 0
 
 func add_energy(value):
 	energy += value
 	energy = clamp(energy, 0, max_energy)
-	if energy < max_energy:
-		$energy_timer.start()
+	#if energy < max_energy:
+		#$energy_timer.start()
 	emit_signal("energy_changed", energy)

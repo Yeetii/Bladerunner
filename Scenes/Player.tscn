@@ -73,7 +73,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="IronSword" parent="Sword" index="0" instance=ExtResource( 3 )]
 
+position = Vector2( 22.5524, -2.0979 )
 _sections_unfolded = [ "Audio Bus", "Collision", "Material", "Transform", "Visibility" ]
+energy_cost = 33
 
 [node name="energy_timer" type="Timer" parent="." index="5"]
 
