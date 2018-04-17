@@ -26,7 +26,9 @@ var equiped_sword
 
 func _ready():
 	Global.connect("update_sword", self, "equip_sword")
-	equiped_sword = $Sword.get_children()[0]
+	
+	equip_sword(Global.get_sword(Global.data.equiped_sword))
+	
 	pass
 
 func _process(delta):
@@ -113,8 +115,8 @@ func equip_sword(sword):
 		$Sword.get_children()[0].queue_free()
 	# Add new sword
 	print("begore crash ", + sword)
-	print("a--------------------",Global.data.equiped_sword.scene)
-	var new_sword = Global.data.equiped_sword.scene.instance()
+	#print("a--------------------",Global.data.equiped_sword.scene)
+	var new_sword = sword.scene.instance()
 	#var new_sword = Global.sword_wood.instance()
 	$Sword.add_child(new_sword)
 	equiped_sword = new_sword

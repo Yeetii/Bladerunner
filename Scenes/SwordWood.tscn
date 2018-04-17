@@ -21,7 +21,7 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility" ]
 energy_cost = 33
-attack_speed = 0.2
+attack_speed = 0.5
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

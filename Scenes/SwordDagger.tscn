@@ -21,7 +21,7 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 energy_cost = 10
-attack_speed = 0.05
+attack_speed = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -30,8 +30,9 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
+z_index = -1
 texture = ExtResource( 2 )
 offset = Vector2( 55, 0 )
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Z Index" ]
 
 

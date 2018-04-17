@@ -5,6 +5,8 @@ const SAVE_PATH = "user://save.json"
 signal update_gold(gold)
 signal update_sword(sword)
 
+signal update_equiped_sword(sword)
+
 enum RARITY {
 	common,
 	uncommon,
@@ -18,19 +20,25 @@ var paused = false
 
 var sword_wood = preload("res://Scenes/SwordWood.tscn")
 
+# preload i dictionary bug???
+
 
 var data = {
 	high_score = 0,
 	gold = 0,
 	
+	equiped_sword = "sword_wood",
+	# Behöver inte sparas bara unlocked weapons
 	weapons = {
 		swords = {
 			sword_wood = {
+				id = "sword_wood",
 				rarity = RARITY.common,
 				scene = preload("res://Scenes/SwordWood.tscn"),
 				texture = preload("res://Sprites/Weapons/sword_wood.png"),
 			},
 			sword_dagger = {
+				id = "sword_dagger",
 				rarity = RARITY.uncommon,
 				scene = preload("res://Scenes/SwordDagger.tscn"),
 				texture = preload("res://Sprites/Weapons/sword_dagger.png"),
@@ -48,29 +56,15 @@ var data = {
 
 
 func _ready():
-	print("unlocked weaposn", data.unlocked_weapons.swords)
-	print("vasasd " ,data.weapons.swords.sword_wood)
-	data.equiped_sword = data.weapons.swords.sword_wood
-	print("equiped sword ready ", data.equiped_sword)
-	load_game()
-	
-	print("--------------------------------Test 1------------------------------")
-	var test = {
-		test1 = {
-			sak = "hej",
-			sak2 = "då",
-		},
-		test2 = "asd"
-	}
-	print("test: ", test)
-	print("test.values: ", test.values())
-	for key in test:
-		print ("key: ", key)
+	#load_game()
+	pass
 
 func get_sword(name):
 	return data.weapons.swords[name]
 
-
+func set_equiped_sword(sword):
+	data.equiped_sword = sword
+	emit_signal("update_equiped_sword", sword)
 
 func remove_save():
 	var dir = Directory.new()
@@ -117,20 +111,18 @@ func load_game():
 	print("current line " , currentline)
 	print("currentline.highscore", currentline.equiped_sword)
 	
+	# todo
+	# gå igenom alla keys i dictonaryn
+	# ändra saker som redan fanns innan
+	# load är help cp just nu och crashar
 	
-	# fix tihis
-	"""for key in data:
-		print("load key: ", key)
-		if currentline.has(key):
-			
-			data[key] = currentline[key]
 	
 	for key in currentline:
-		print("current line ",key )
-	"""
-	data = currentline
+		data[key] = currentline[key]
+	
+	#data = currentline
 	print("loaded successfully")
-	print("data after load scene: ", data.equiped_sword.scene)
+	print("data", data)
 	
 	save_file.close()
 	

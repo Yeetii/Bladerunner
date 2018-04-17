@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Sprites/GrassBG.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Misc/plant1.png" type="Texture" id=2]
 
 [node name="icon" type="Sprite"]
 
@@ -8,6 +9,636 @@ position = Vector2( 0, -900 )
 z_index = -7
 texture = ExtResource( 1 )
 centered = false
-_sections_unfolded = [ "Offset", "Region", "Transform", "Z Index" ]
+_sections_unfolded = [ "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="plant1" type="Sprite" parent="." index="0"]
+
+position = Vector2( 75.6248, 277.584 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant42" type="Sprite" parent="." index="1"]
+
+position = Vector2( 258.918, 111.475 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant58" type="Sprite" parent="." index="2"]
+
+position = Vector2( 54.1451, 89.9954 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant77" type="Sprite" parent="." index="3"]
+
+position = Vector2( 313.333, 313.384 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant78" type="Sprite" parent="." index="4"]
+
+position = Vector2( 154.383, 652.762 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant106" type="Sprite" parent="." index="5"]
+
+position = Vector2( -27.1148, 652.762 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant29" type="Sprite" parent="." index="6"]
+
+position = Vector2( 75.6248, 277.584 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant33" type="Sprite" parent="." index="7"]
+
+position = Vector2( 258.918, 111.475 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant53" type="Sprite" parent="." index="8"]
+
+position = Vector2( 54.1451, 89.9954 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant67" type="Sprite" parent="." index="9"]
+
+position = Vector2( 313.333, 313.384 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant82" type="Sprite" parent="." index="10"]
+
+position = Vector2( 154.383, 652.762 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant107" type="Sprite" parent="." index="11"]
+
+position = Vector2( -27.1148, 652.762 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant14" type="Sprite" parent="." index="12"]
+
+position = Vector2( 106.975, 476.135 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant34" type="Sprite" parent="." index="13"]
+
+position = Vector2( 290.268, 310.026 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant50" type="Sprite" parent="." index="14"]
+
+position = Vector2( 85.4952, 288.546 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant66" type="Sprite" parent="." index="15"]
+
+position = Vector2( 344.683, 511.934 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant83" type="Sprite" parent="." index="16"]
+
+position = Vector2( 185.734, 851.313 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant103" type="Sprite" parent="." index="17"]
+
+position = Vector2( 4.23526, 851.313 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant22" type="Sprite" parent="." index="18"]
+
+position = Vector2( 106.975, 476.135 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant38" type="Sprite" parent="." index="19"]
+
+position = Vector2( 290.268, 310.026 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant52" type="Sprite" parent="." index="20"]
+
+position = Vector2( 85.4952, 288.546 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant72" type="Sprite" parent="." index="21"]
+
+position = Vector2( 344.683, 511.934 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant85" type="Sprite" parent="." index="22"]
+
+position = Vector2( 185.734, 851.313 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant96" type="Sprite" parent="." index="23"]
+
+position = Vector2( 4.23526, 851.313 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant2" type="Sprite" parent="." index="24"]
+
+position = Vector2( 167.917, 267.026 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant44" type="Sprite" parent="." index="25"]
+
+position = Vector2( 351.21, 100.917 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant60" type="Sprite" parent="." index="26"]
+
+position = Vector2( 146.437, 79.4374 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant76" type="Sprite" parent="." index="27"]
+
+position = Vector2( 405.625, 302.826 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant86" type="Sprite" parent="." index="28"]
+
+position = Vector2( 246.676, 642.204 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant101" type="Sprite" parent="." index="29"]
+
+position = Vector2( 65.1775, 642.204 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant32" type="Sprite" parent="." index="30"]
+
+position = Vector2( 167.917, 267.026 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant46" type="Sprite" parent="." index="31"]
+
+position = Vector2( 351.21, 100.917 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant56" type="Sprite" parent="." index="32"]
+
+position = Vector2( 146.437, 79.4374 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant71" type="Sprite" parent="." index="33"]
+
+position = Vector2( 405.625, 302.826 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant89" type="Sprite" parent="." index="34"]
+
+position = Vector2( 246.676, 642.204 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant100" type="Sprite" parent="." index="35"]
+
+position = Vector2( 65.1775, 642.204 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant16" type="Sprite" parent="." index="36"]
+
+position = Vector2( 199.267, 465.577 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant39" type="Sprite" parent="." index="37"]
+
+position = Vector2( 382.56, 299.468 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant55" type="Sprite" parent="." index="38"]
+
+position = Vector2( 177.787, 277.988 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant64" type="Sprite" parent="." index="39"]
+
+position = Vector2( 436.975, 501.376 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant80" type="Sprite" parent="." index="40"]
+
+position = Vector2( 278.026, 840.755 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant104" type="Sprite" parent="." index="41"]
+
+position = Vector2( 96.5275, 840.755 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant25" type="Sprite" parent="." index="42"]
+
+position = Vector2( 199.267, 465.577 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant37" type="Sprite" parent="." index="43"]
+
+position = Vector2( 382.56, 299.468 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant51" type="Sprite" parent="." index="44"]
+
+position = Vector2( 177.787, 277.988 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant63" type="Sprite" parent="." index="45"]
+
+position = Vector2( 436.975, 501.376 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant79" type="Sprite" parent="." index="46"]
+
+position = Vector2( 278.026, 840.755 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant93" type="Sprite" parent="." index="47"]
+
+position = Vector2( 96.5275, 840.755 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant3" type="Sprite" parent="." index="48"]
+
+position = Vector2( 118.757, 233.623 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant41" type="Sprite" parent="." index="49"]
+
+position = Vector2( 302.05, 67.5138 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant62" type="Sprite" parent="." index="50"]
+
+position = Vector2( 97.2778, 46.0342 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant74" type="Sprite" parent="." index="51"]
+
+position = Vector2( 356.466, 269.422 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant91" type="Sprite" parent="." index="52"]
+
+position = Vector2( 197.516, 608.801 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant102" type="Sprite" parent="." index="53"]
+
+position = Vector2( 16.0179, 608.801 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant28" type="Sprite" parent="." index="54"]
+
+position = Vector2( 118.757, 233.623 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant40" type="Sprite" parent="." index="55"]
+
+position = Vector2( 302.05, 67.5138 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant61" type="Sprite" parent="." index="56"]
+
+position = Vector2( 97.2778, 46.0342 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant73" type="Sprite" parent="." index="57"]
+
+position = Vector2( 356.466, 269.422 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant90" type="Sprite" parent="." index="58"]
+
+position = Vector2( 197.516, 608.801 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant98" type="Sprite" parent="." index="59"]
+
+position = Vector2( 16.0179, 608.801 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant13" type="Sprite" parent="." index="60"]
+
+position = Vector2( 150.107, 432.174 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant35" type="Sprite" parent="." index="61"]
+
+position = Vector2( 333.4, 266.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant48" type="Sprite" parent="." index="62"]
+
+position = Vector2( 128.628, 244.585 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant68" type="Sprite" parent="." index="63"]
+
+position = Vector2( 387.816, 467.973 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant84" type="Sprite" parent="." index="64"]
+
+position = Vector2( 228.866, 807.351 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant95" type="Sprite" parent="." index="65"]
+
+position = Vector2( 47.368, 807.351 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant23" type="Sprite" parent="." index="66"]
+
+position = Vector2( 150.107, 432.174 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant36" type="Sprite" parent="." index="67"]
+
+position = Vector2( 333.4, 266.064 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant49" type="Sprite" parent="." index="68"]
+
+position = Vector2( 128.628, 244.585 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant70" type="Sprite" parent="." index="69"]
+
+position = Vector2( 387.816, 467.973 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant88" type="Sprite" parent="." index="70"]
+
+position = Vector2( 228.866, 807.351 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant105" type="Sprite" parent="." index="71"]
+
+position = Vector2( 47.368, 807.351 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant4" type="Sprite" parent="." index="72"]
+
+position = Vector2( 170.438, 372.908 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant43" type="Sprite" parent="." index="73"]
+
+position = Vector2( 353.731, 206.799 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant57" type="Sprite" parent="." index="74"]
+
+position = Vector2( 148.958, 185.32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant65" type="Sprite" parent="." index="75"]
+
+position = Vector2( 408.146, 408.708 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant81" type="Sprite" parent="." index="76"]
+
+position = Vector2( 249.197, 748.086 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant94" type="Sprite" parent="." index="77"]
+
+position = Vector2( 67.6985, 748.086 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant31" type="Sprite" parent="." index="78"]
+
+position = Vector2( 170.438, 372.908 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant45" type="Sprite" parent="." index="79"]
+
+position = Vector2( 353.731, 206.799 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant54" type="Sprite" parent="." index="80"]
+
+position = Vector2( 148.958, 185.32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant69" type="Sprite" parent="." index="81"]
+
+position = Vector2( 408.146, 408.708 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant87" type="Sprite" parent="." index="82"]
+
+position = Vector2( 249.197, 748.086 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant97" type="Sprite" parent="." index="83"]
+
+position = Vector2( 67.6985, 748.086 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant15" type="Sprite" parent="." index="84"]
+
+position = Vector2( 201.788, 571.459 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant24" type="Sprite" parent="." index="85"]
+
+position = Vector2( 201.788, 571.459 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant5" type="Sprite" parent="." index="86"]
+
+position = Vector2( 216.446, 329.421 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant26" type="Sprite" parent="." index="87"]
+
+position = Vector2( 216.446, 329.421 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant11" type="Sprite" parent="." index="88"]
+
+position = Vector2( 247.796, 527.972 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant20" type="Sprite" parent="." index="89"]
+
+position = Vector2( 247.796, 527.972 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant6" type="Sprite" parent="." index="90"]
+
+position = Vector2( 267.497, 263.245 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant27" type="Sprite" parent="." index="91"]
+
+position = Vector2( 267.497, 263.245 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant12" type="Sprite" parent="." index="92"]
+
+position = Vector2( 298.847, 461.795 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant21" type="Sprite" parent="." index="93"]
+
+position = Vector2( 298.847, 461.795 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant7" type="Sprite" parent="." index="94"]
+
+position = Vector2( 283.883, 413.245 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant17" type="Sprite" parent="." index="95"]
+
+position = Vector2( 283.883, 413.245 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant9" type="Sprite" parent="." index="96"]
+
+position = Vector2( 315.233, 611.795 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant18" type="Sprite" parent="." index="97"]
+
+position = Vector2( 315.233, 611.795 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant8" type="Sprite" parent="." index="98"]
+
+position = Vector2( 110.564, 526.06 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant19" type="Sprite" parent="." index="99"]
+
+position = Vector2( 110.564, 526.06 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant10" type="Sprite" parent="." index="100"]
+
+position = Vector2( 141.914, 724.61 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant30" type="Sprite" parent="." index="101"]
+
+position = Vector2( 141.914, 724.61 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant47" type="Sprite" parent="." index="102"]
+
+position = Vector2( 325.207, 558.501 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant59" type="Sprite" parent="." index="103"]
+
+position = Vector2( 120.435, 537.021 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="plant75" type="Sprite" parent="." index="104"]
+
+position = Vector2( 379.622, 760.409 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
 
 

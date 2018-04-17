@@ -17,7 +17,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index", "collision" ]
 max_speed = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
@@ -27,8 +27,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
+z_as_relative = false
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
 
