@@ -21,6 +21,8 @@ func play(in_or_out):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if restart_scene:
-		get_tree().reload_current_scene()
+		print("restrat")
+		#get_tree().reload_current_scene()
+		get_tree().change_scene("res://Scenes/Main.tscn")
 	queue_free()
 	pass # replace with function body

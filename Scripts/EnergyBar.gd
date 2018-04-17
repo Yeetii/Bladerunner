@@ -15,7 +15,7 @@ func _ready():
 	new_energy = get_node(player).energy
 	max_energy = get_node(player).max_energy
 	get_node(player).connect("energy_changed", self, "update_energy_bar")
-	pass
+
 
 func _process(delta):
 	energy = lerp(energy, new_energy, 10 * delta)
@@ -26,5 +26,3 @@ func _process(delta):
 
 func update_energy_bar(updated_energy):
 	new_energy = updated_energy
-	print("tessa enegy")
-	pass

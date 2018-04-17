@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/Hero.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/IronSword.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SwordWood.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -69,18 +69,15 @@ _sections_unfolded = [ "playback" ]
 
 [node name="Sword" type="Node2D" parent="." index="4"]
 
-_sections_unfolded = [ "Transform" ]
+z_index = -1
+_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="IronSword" parent="Sword" index="0" instance=ExtResource( 3 )]
-
-position = Vector2( 22.5524, -2.0979 )
-_sections_unfolded = [ "Audio Bus", "Collision", "Material", "Transform", "Visibility" ]
-energy_cost = 33
+[node name="Sword_Wood" parent="Sword" index="0" instance=ExtResource( 3 )]
 
 [node name="energy_timer" type="Timer" parent="." index="5"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 2.0
 one_shot = true
 autostart = false
 

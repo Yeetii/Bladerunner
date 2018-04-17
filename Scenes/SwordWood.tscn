@@ -8,8 +8,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 35.8266, 9.9207 )
 
-[node name="Sword" type="Area2D" index="0"]
+[node name="Sword_Wood" type="Area2D"]
 
+position = Vector2( 22, -4 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -19,7 +20,8 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility" ]
-energy_cost = null
+energy_cost = 33
+attack_speed = 0.2
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -32,10 +34,7 @@ _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform",
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-visible = false
 position = Vector2( 59.968, 4.86729 )
 shape = SubResource( 1 )
-
-[connection signal="area_entered" from="." to="." method="_on_Sword_area_entered"]
 
 

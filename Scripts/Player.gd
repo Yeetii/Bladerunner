@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 var energy = 100
 var max_energy = 100
+var can_regen_energy = true
+
 signal energy_changed(new_energy)
 
 var base_speed = Vector2(0, -3)
@@ -11,7 +13,6 @@ var start_pos
 
 var kills = 0
 
-
 var attack_left = true
 var can_attack = true
 var attack_speed = .2
@@ -20,19 +21,24 @@ var time_alive = 0
 
 export var max_speed = 10
 
+var equiped_sword
+
 
 func _ready():
-	
+	Global.connect("update_sword", self, "equip_sword")
+	equiped_sword = $Sword.get_children()[0]
 	pass
 
 func _process(delta):
+	
 	move_and_collide(speed)
 	
 	if Global.is_playing:
 		time_alive += delta
 		update_speed()
 	
-	add_energy(10*delta)
+	if can_regen_energy:
+		add_energy(10*delta)
 
 
 func _on_Tween_tween_completed(object, key):
@@ -42,16 +48,16 @@ func _on_Tween_tween_completed(object, key):
 func attack():
 	$Tween.interpolate_property($Sword, "rotation",
 		  $Sword.rotation, -PI * int(attack_left),
-		  attack_speed,Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		  equiped_sword.attack_speed,Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	
 	$Tween.start()
 	attack_left = !attack_left
-	add_energy(-$Sword/IronSword.energy_cost)
+	add_energy(- equiped_sword.energy_cost)
 
 
 func _input(event):
 	if event.is_pressed():
-		if can_attack && has_energy():
+		if can_attack && can_regen_energy:
 			attack()
 			can_attack = false
 
@@ -80,14 +86,35 @@ func die():
 	queue_free()
 
 func _on_energy_timer_timeout():
-	add_energy(1)
+	can_regen_energy = true
+	
 
 func has_energy():
-	return energy - $Sword/IronSword.energy_cost > 0
+	if not can_regen_energy:
+		return energy - equiped_sword.energy_cost > 0
 
 func add_energy(value):
 	energy += value
+	
+	if energy < 0:
+		$energy_timer.start()
+		can_regen_energy = false
+	
 	energy = clamp(energy, 0, max_energy)
 	#if energy < max_energy:
 		#$energy_timer.start()
 	emit_signal("energy_changed", energy)
+
+func equip_sword(sword):
+	# Make function work with all weapons
+	#var current_weapon = $Sword.get_children()[0]
+	# Remove old sword
+	if $Sword.get_children().size() > 0:
+		$Sword.get_children()[0].queue_free()
+	# Add new sword
+	print("begore crash ", + sword)
+	print("a--------------------",Global.data.equiped_sword.scene)
+	var new_sword = Global.data.equiped_sword.scene.instance()
+	#var new_sword = Global.sword_wood.instance()
+	$Sword.add_child(new_sword)
+	equiped_sword = new_sword

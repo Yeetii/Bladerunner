@@ -68,8 +68,7 @@ func _process(delta):
 
 func spawn_enemy():
 	var enemy = get_random_enemy()
-	print(enemy)
-	
+	print("enemy ",enemy)
 	var new_enemy = enemy.instance()
 	add_child(new_enemy)
 	new_enemy.spawn($Player.position)
