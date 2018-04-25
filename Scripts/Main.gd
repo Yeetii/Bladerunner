@@ -15,7 +15,8 @@ export (PackedScene) var goblin
 export (int) var goblin_adult_spawn_chance
 export (PackedScene) var goblin_adult
 
-
+export (int) var snake_spawn_chance
+export (PackedScene) var snake
 
 
 var time_alive = 0
@@ -97,6 +98,10 @@ func init_enemies():
 		goblin_adult = {
 			'spawn_chance': goblin_adult_spawn_chance,
 			'scene': goblin_adult,
+		},
+		snake = {
+			'spawn_chance': snake_spawn_chance,
+			'scene': snake,
 		}
 	}
 

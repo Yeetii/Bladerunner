@@ -11,6 +11,8 @@ extents = Vector2( 35.8266, 9.9207 )
 [node name="Sword_Wood" type="Area2D"]
 
 position = Vector2( 22, -4 )
+z_index = -1
+z_as_relative = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -19,9 +21,9 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility" ]
+_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "Z Index" ]
 energy_cost = 33
-attack_speed = 0.5
+attack_speed = 0.3
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

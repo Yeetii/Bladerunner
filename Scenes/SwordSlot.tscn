@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/SwordSlot.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Weapons/sword_wood.png" type="Texture" id=3]
 
-[node name="SwordSlot" type="TextureButton"]
+[node name="SwordSlot" type="TextureButton" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -63,7 +63,5 @@ stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Rect" ]
 
 [connection signal="button_down" from="." to="." method="_on_SwordSlot_button_down"]
-
-[connection signal="pressed" from="." to="." method="_on_SwordSlot_pressed"]
 
 

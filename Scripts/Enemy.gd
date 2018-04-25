@@ -9,6 +9,7 @@ var speed
 export (Vector2) var spawn_offset = Vector2(0, -1000)
 export (int) var spawn_xpos_random = 100
 
+var dead = false
 
 var gold = preload("res://Scenes/Gold.tscn")
 
@@ -19,7 +20,8 @@ func _ready():
 	
 
 func _process(delta):
-	move(delta)
+	if !dead:
+		move(delta)
 
 func move(delta):
 	position.y += speed * delta
@@ -36,7 +38,11 @@ func _on_Enemy_body_entered(body):
 func on_body_entered(body):
 	body.die()
 
+
+
 func death_animation(sword_rotation, attack_left):
+	dead = true
+	die()
 	
 	# spawn gold
 	var new_gold = gold.instance()
@@ -76,3 +82,6 @@ func death_animation(sword_rotation, attack_left):
 
 func on_tween_completed(object, key):
 	queue_free()
+
+func die():
+	pass

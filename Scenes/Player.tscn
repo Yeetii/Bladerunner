@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/Hero.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/SwordWood.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -11,7 +10,7 @@ radius = 34.2424
 
 [node name="Player" type="KinematicBody2D"]
 
-position = Vector2( 10, 0 )
+z_index = 10
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -72,8 +71,6 @@ _sections_unfolded = [ "playback" ]
 
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sword_Wood" parent="Sword" index="0" instance=ExtResource( 3 )]
 
 [node name="energy_timer" type="Timer" parent="." index="5"]
 

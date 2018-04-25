@@ -10,7 +10,17 @@ func _ready():
 		$ScrollContainer/Swords.add_child(new_sword_slot)
 		new_sword_slot.set_data(Global.get_sword(sword))
 		pass
+	
+	update_player_visuals()
 
+func update_player_visuals():
+	var player_sword_node = get_node("PlayerVisuals/PlayerSword")
+	# remove old
+	if (player_sword_node.get_children().size() > 0):
+		player_sword_node.get_children()[0].queue_free()
+	# add new
+	var new_sword = Global.get_sword(Global.data.equiped_sword).scene.instance()
+	player_sword_node.add_child(new_sword)
 
 
 func _on_Home_button_down():

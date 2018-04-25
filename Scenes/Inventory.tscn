@@ -28,8 +28,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 479.0
-margin_bottom = 105.0
+margin_left = 1.0
+margin_top = 748.0
+margin_right = 480.0
+margin_bottom = 853.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -49,15 +51,14 @@ _sections_unfolded = [ "Theme", "custom_fonts", "custom_styles" ]
 
 [node name="PlayerVisuals" type="Control" parent="." index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 222.0
-margin_top = 738.0
-margin_right = 262.0
-margin_bottom = 778.0
+margin_left = 223.0
+margin_top = 638.0
+margin_right = 263.0
+margin_bottom = 678.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

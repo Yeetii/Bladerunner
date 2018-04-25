@@ -6,7 +6,8 @@
 [node name="icon" type="Sprite"]
 
 position = Vector2( 0, -900 )
-z_index = -7
+z_index = -1000
+z_as_relative = false
 texture = ExtResource( 1 )
 centered = false
 _sections_unfolded = [ "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
@@ -76,6 +77,7 @@ texture = ExtResource( 2 )
 position = Vector2( 154.383, 652.762 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="plant107" type="Sprite" parent="." index="11"]
 

@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/GobinAdult.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Snake.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/EnemyHitParticle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Characters/Goblin Adult.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Enemies/Snake_head.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 32.3599
+radius = 16.6954
 
-[node name="GobinAdult" type="Area2D"]
+[node name="Snake" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -19,23 +19,25 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-death_particle = ExtResource( 2 )
-base_speed = 150
-speed_randomness = 50
-spawn_offset = Vector2( 0, -1000 )
-spawn_xpos_random = 70
-move_spread = 100
-move_spread_randomness = 120
-
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
-rotation = 3.14159
-texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
+death_particle = ExtResource( 2 )
+base_speed = 200
+speed_randomness = 100
+spawn_offset = Vector2( 0, -1000 )
+spawn_xpos_random = 20
+body_size = 20
+body_offset = 10
+side_movement_width = 50
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 shape = SubResource( 1 )
+
+[node name="Head" type="Sprite" parent="." index="1"]
+
+z_index = 10
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="Tween" type="Tween" parent="." index="2"]
 

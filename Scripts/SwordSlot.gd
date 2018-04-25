@@ -16,12 +16,8 @@ func _on_SwordSlot_button_down():
 		Global.set_equiped_sword(data.id)
 		self_modulate = equiped_color
 		
-		var player_sword_node = inventory_node.get_node("PlayerVisuals/PlayerSword")
-		# remove old
-		player_sword_node.get_children()[0].queue_free()
-		# add new
-		var new_sword = data.scene.instance()
-		player_sword_node.add_child(new_sword)
+		inventory_node.update_player_visuals()
+		
 
 
 
@@ -35,11 +31,7 @@ func update():
 	
 	if data.id == Global.data.equiped_sword:
 		self_modulate = equiped_color
-	
 
-func _on_SwordSlot_pressed():
-	print("press ",get_tree().root.name)
-	pass # replace with function body
 
 func equiped_sword_changed(sword):
 	if data.id != sword:
